@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'sansfont';
+  src: url('myfont.woff2') format('woff2');
+}
+*{
+    font-family:'sansfont', Fallback, sans-serif;
+}

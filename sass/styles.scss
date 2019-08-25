@@ -1,0 +1,241 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "fonts", "variables", "mixins";
+
+* {
+  box-sizing: border-box;
+}
+.main-container {
+    margin:0;
+    background-color: $text;
+    color: $bokara-grey;
+    .container {
+        .header-content {
+            padding:1em 0;
+            @include desktop{
+                padding:1em 0;
+            }
+            .logo-svg {
+                @include desktop{
+                    width:100%;
+                }
+                max-width:100%;
+                height:10px;   
+            }
+            
+        }
+    }
+    .hero {
+        background: #d22b1f;
+        background-image: url('https://lucidmotors.com/sites/default/files/gallery/lucid-air-gallery-009.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        width: 100%;
+        padding-bottom: 50%;
+        h1 {
+            &.title {
+                color:$text;
+                position: absolute;
+                bottom: 100px; 
+                letter-spacing:.083333333333333em;
+                animation:herotext 3s 1;
+                font-size:28px;
+                @include desktop{
+                    font-size:40px;
+                    max-width:380px;
+                }
+                @include tablet{
+                    max-width:306px;
+                }
+                @include mobile{
+                    max-width:307px;
+                    top:0;
+                    color:$bokara-grey;
+                }
+            }
+            @keyframes herotext {
+                0%{
+                    text-shadow:8px 8px #b18f4f;
+                }
+                50% {
+                    text-shadow:6px 6px #b1954f;
+                }
+                100% {
+                    text-shadow:4px 4px #b18f4f;
+                }
+            }
+        }
+    }
+    .content {
+        margin: 2em 0;
+        h2 {
+            font-weight:$font-weight;
+            margin-bottom: 1em;
+            font-size:24px;
+            @include desktop{
+                font-size:36px;
+            }
+        }
+        p {
+            font-weight:$font-weight;
+        }
+        .col-md-8 {
+            @include tablet {
+                width:66%;
+            }
+            @include mobile-tablet {
+                padding-bottom:0.5em;
+            }
+            @include desktop {
+                border-right:$standard-border;
+                height:500px;
+            }
+        }
+        hr {
+            @include tablet{
+                border-color:$bokara-grey;
+                margin:0 1em;
+                width:66%;
+            }
+            @include mobile {
+                border-color:$bokara-grey;
+                margin:0 1em;
+            }
+            @include desktop {
+                display:none;
+            }
+        }
+        .sidebar {
+            &.col-md-4 {
+                @include tablet {
+                    width:auto;
+                }    
+            }
+            .user-data {
+                .col{
+                    @include tablet {
+                        display:inline-block;
+                        width:33.3%;
+                    }
+                }
+
+            }
+            .form-th-message {
+                display:none;
+                font-size:1.5em;
+                color:#b18f4f;
+                animation:message 3s 1;
+                @include mobile-tablet {
+                    padding-top:0.5em;
+                }
+            }
+            @keyframes message {
+                0% {
+                    letter-spacing:15px
+                }
+                30% {
+                    letter-spacing: 20px;
+                }
+                85% {
+                    letter-spacing:10px;
+                }
+                100% {
+                    letter-spacing:8px;
+                    
+                }
+            }
+            input, select {
+                width:100%;
+                margin-bottom: 1em;
+                padding:10px;
+                border:1px solid $border-color;
+                background-color:#f6f6f6;
+            }
+            select { 
+                -webkit-appearance: none;
+                -webkit-border-radius: 0px;
+                border-color: $border-color;
+                height:43px;
+                background-image:linear-gradient(45deg, transparent 50%, gray 50%),
+                                 linear-gradient(135deg, gray 50%, transparent 50%),
+                                 linear-gradient(to right, #ccc, #ccc);
+                background-position:calc(100% - 20px) calc(1em + 2px),
+                                    calc(100% - 15px) calc(1em + 2px),
+                                    calc(100% - 2.5em) 0.5em;
+                background-size:5px 5px,5px 5px,0px 1.5em;
+                background-repeat: no-repeat;
+            }
+            label {
+                width:50%;
+                text-transform: uppercase;
+                font-weight:$font-weight;   
+            }
+            .sub-button{
+                &.col {
+                    @include tablet {
+                        width:66%;
+                    }      
+                }
+                text-align:center;
+                button {
+                    width:200px;
+                    height:40px;
+                    padding:10px;
+                    @media screen and (min-width:768px){
+                        float:right;
+                    }
+                    background-color: #b18f4f;
+                    color:$text;
+                }
+            }
+
+        }
+    }
+    footer {
+        background-color: $background;
+        .footer {
+            padding:1em 0px;
+             font-size:0.86em;
+             .footer-logo{
+                 margin:0.5em 0;
+                .logo-svg{
+                    width:160px;
+                    max-width:160px;
+                    height:10px;
+                }  
+            }
+            .lucid-address{
+                margin-bottom:1em;
+                .line {
+                    @include mobile {
+                        display:none;
+                    }
+                }
+                    a {
+                        .phone {
+                            @include mobile {
+                                display:block;
+                        }
+                    }  
+                        
+                    }
+            }
+            .copyright-terms {
+                .terms{
+                    display:inline-block;
+                    @media screen and (min-width:768px){
+                        float:right;
+                    }
+                }
+                .copyright {
+                    @media screen and (min-width:768px){
+                        display:inline-block;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}
