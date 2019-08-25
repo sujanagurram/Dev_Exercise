@@ -26,12 +26,18 @@ module.exports = function(grunt) {
                   ext: '.min.js'
               }]
           }
+      },
+      serve: {
+          options : {
+              port: 8080
+          }
       }
 
   });
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-serve');
     
-    grunt.registerTask('default', 'cssmin');
+    grunt.registerTask('default', ['cssmin', 'uglify', 'serve']);
 
 };
